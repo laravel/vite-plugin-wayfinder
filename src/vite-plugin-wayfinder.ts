@@ -1,0 +1,89 @@
+import { exec } from "child_process";
+import { minimatch } from "minimatch";
+import osPath from "path";
+import { PluginContext } from "rollup";
+import { promisify } from "util";
+import { Plugin } from "vite";
+
+const execAsync = promisify(exec);
+
+interface WayfinderOptions {
+    patterns?: string[];
+    actions?: boolean;
+    routes?: boolean;
+    formVariants?: boolean;
+    path?: string;
+    command?: string;
+}
+
+let context: PluginContext;
+
+export const wayfinder = ({
+    patterns = ["routes/**/*.php", "app/**/Http/**/*.php"],
+    actions = true,
+    routes = true,
+    formVariants = false,
+    path,
+    command = "php artisan wayfinder:generate",
+}: WayfinderOptions = {}): Plugin => {
+    patterns = patterns.map((pattern) => pattern.replace("\\", "/"));
+
+    const args: string[] = [];
+    const generating: string[] = [];
+
+    if (!actions) {
+        args.push("--skip-actions");
+    } else {
+        generating.push("actions");
+    }
+
+    if (!routes) {
+        args.push("--skip-routes");
+    } else {
+        generating.push("routes");
+    }
+
+    if (formVariants) {
+        args.push("--with-form");
+        generating.push("form variants");
+    }
+
+    if (path) {
+        args.push(`--path=${path}`);
+    }
+
+    const runCommand = async () => {
+        try {
+            await execAsync(`${command} ${args.join(" ")}`);
+        } catch (error) {
+            context.error("Error generating types: " + error);
+        }
+
+        context.info(`Types generated for ${generating.join(", ")}`);
+    };
+
+    return {
+        name: "@laravel/vite-plugin-wayfinder",
+        enforce: "pre",
+        buildStart() {
+            context = this;
+            return runCommand();
+        },
+        handleHotUpdate({ file, server }) {
+            if (
+                patterns.some((pattern) =>
+                    minimatch(
+                        file,
+                        osPath
+                            .resolve(server.config.root, pattern)
+                            .replaceAll("\\", "/"),
+                    ),
+                )
+            ) {
+                return runCommand();
+            }
+
+            return [];
+        },
+    };
+};
