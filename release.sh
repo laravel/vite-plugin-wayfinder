@@ -71,7 +71,7 @@ git push --tags
 echo ""
 
 echo "Running release process..."
-pnpm publish --access public
+pnpm publish
 echo ""
 
 # Echo joke
