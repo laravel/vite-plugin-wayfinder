@@ -1,9 +1,9 @@
 {
     "name": "@laravel/vite-plugin-wayfinder",
-    "version": "0.1.0",
+    "version": "0.0.0",
     "description": "",
     "scripts": {
-        "prepare": "npm run build",
+        "prepublish": "npm run build",
         "dev": "unbuild --stub",
         "build": "unbuild",
         "format": "prettier --write ."
