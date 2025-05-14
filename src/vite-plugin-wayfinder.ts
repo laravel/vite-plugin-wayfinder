@@ -3,7 +3,7 @@ import { minimatch } from "minimatch";
 import osPath from "path";
 import { PluginContext } from "rollup";
 import { promisify } from "util";
-import { Plugin } from "vite";
+import { Plugin, ViteDevServer } from "vite";
 
 const execAsync = promisify(exec);
 
@@ -70,20 +70,26 @@ export const wayfinder = ({
             return runCommand();
         },
         handleHotUpdate({ file, server }) {
-            if (
-                patterns.some((pattern) =>
-                    minimatch(
-                        file,
-                        osPath
-                            .resolve(server.config.root, pattern)
-                            .replaceAll("\\", "/"),
-                    ),
-                )
-            ) {
+            if (canRun(patterns, { file, server })) {
                 return runCommand();
             }
 
             return [];
         },
     };
+};
+
+const canRun = (
+    patterns: string[],
+    opts: { file: string; server: ViteDevServer },
+): boolean => {
+    const file = opts.file.replaceAll("\\", "/");
+
+    return patterns.some((pattern) => {
+        pattern = osPath
+            .resolve(opts.server.config.root, pattern)
+            .replaceAll("\\", "/");
+
+        return minimatch(file, pattern);
+    });
 };
