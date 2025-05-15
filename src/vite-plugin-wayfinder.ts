@@ -3,7 +3,7 @@ import { minimatch } from "minimatch";
 import osPath from "path";
 import { PluginContext } from "rollup";
 import { promisify } from "util";
-import { Plugin, ViteDevServer } from "vite";
+import { HmrContext, Plugin } from "vite";
 
 const execAsync = promisify(exec);
 
@@ -81,7 +81,7 @@ export const wayfinder = ({
 
 const canRun = (
     patterns: string[],
-    opts: { file: string; server: ViteDevServer },
+    opts: Pick<HmrContext, "file" | "server">,
 ): boolean => {
     const file = opts.file.replaceAll("\\", "/");
 
