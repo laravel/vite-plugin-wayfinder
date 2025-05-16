@@ -70,7 +70,7 @@ export const wayfinder = ({
             return runCommand();
         },
         handleHotUpdate({ file, server }) {
-            if (canRun(patterns, { file, server })) {
+            if (shouldRun(patterns, { file, server })) {
                 return runCommand();
             }
 
@@ -79,7 +79,7 @@ export const wayfinder = ({
     };
 };
 
-const canRun = (
+const shouldRun = (
     patterns: string[],
     opts: Pick<HmrContext, "file" | "server">,
 ): boolean => {
