@@ -3,7 +3,7 @@ import { minimatch } from "minimatch";
 import osPath from "path";
 import { PluginContext } from "rollup";
 import { promisify } from "util";
-import { Plugin } from "vite";
+import { HmrContext, Plugin } from "vite";
 
 const execAsync = promisify(exec);
 
@@ -70,20 +70,26 @@ export const wayfinder = ({
             return runCommand();
         },
         handleHotUpdate({ file, server }) {
-            if (
-                patterns.some((pattern) =>
-                    minimatch(
-                        file,
-                        osPath
-                            .resolve(server.config.root, pattern)
-                            .replaceAll("\\", "/"),
-                    ),
-                )
-            ) {
+            if (shouldRun(patterns, { file, server })) {
                 return runCommand();
             }
 
             return [];
         },
     };
+};
+
+const shouldRun = (
+    patterns: string[],
+    opts: Pick<HmrContext, "file" | "server">,
+): boolean => {
+    const file = opts.file.replaceAll("\\", "/");
+
+    return patterns.some((pattern) => {
+        pattern = osPath
+            .resolve(opts.server.config.root, pattern)
+            .replaceAll("\\", "/");
+
+        return minimatch(file, pattern);
+    });
 };
