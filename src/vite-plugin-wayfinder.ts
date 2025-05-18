@@ -69,12 +69,10 @@ export const wayfinder = ({
             context = this;
             return runCommand();
         },
-        handleHotUpdate({ file, server }) {
+        async handleHotUpdate({ file, server }) {
             if (shouldRun(patterns, { file, server })) {
-                return runCommand();
+                await runCommand();
             }
-
-            return [];
         },
     };
 };
