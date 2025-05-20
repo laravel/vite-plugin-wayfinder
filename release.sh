@@ -75,3 +75,8 @@ pnpm publish
 echo ""
 
 echo "Released!"
+
+echo ""
+
+echo "Release on GitHub:"
+echo "https://github.com/laravel/vite-plugin-wayfinder/releases/tag/v$new_version"
