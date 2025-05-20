@@ -74,5 +74,4 @@ echo "Running release process..."
 pnpm publish
 echo ""
 
-# Echo joke
 echo "Released!"
