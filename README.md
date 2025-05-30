@@ -22,7 +22,7 @@ export default defineConfig({
     plugins: [
         wayfinder({
             path: "my/custom/path/to/js",
-            command: "herd php artisan generate:wayfinder",
+            command: "herd php artisan wayfinder:generate",
             routes: false,
             actions: true,
             formVariants: false,
