@@ -2,7 +2,21 @@
 
 All notable changes to this project will be documented in this file.
 
-## [Unreleased](https://github.com/laravel/vite-plugin-wayfinder/compare/v0.1.3...main)
+## [Unreleased](https://github.com/laravel/vite-plugin-wayfinder/compare/v0.1.4...main)
+
+## [v0.1.4](https://github.com/laravel/vite-plugin-wayfinder/compare/v0.1.3...v0.1.4) - 2025-09-22
+
+### What's Changed
+
+* fix: readme wrong command order by [@crazynds](https://github.com/crazynds) in https://github.com/laravel/vite-plugin-wayfinder/pull/5
+* Publish in CI by [@joetannenbaum](https://github.com/joetannenbaum) in https://github.com/laravel/vite-plugin-wayfinder/pull/7
+
+### New Contributors
+
+* [@crazynds](https://github.com/crazynds) made their first contribution in https://github.com/laravel/vite-plugin-wayfinder/pull/5
+* [@joetannenbaum](https://github.com/joetannenbaum) made their first contribution in https://github.com/laravel/vite-plugin-wayfinder/pull/7
+
+**Full Changelog**: https://github.com/laravel/vite-plugin-wayfinder/compare/v0.1.3...v0.1.4
 
 ## [v0.1.3](https://github.com/laravel/vite-plugin-wayfinder/compare/v0.1.2...v0.1.3) - 2025-05-20
 
