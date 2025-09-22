@@ -1,6 +1,6 @@
 {
     "name": "@laravel/vite-plugin-wayfinder",
-    "version": "0.1.4",
+    "version": "0.1.5",
     "description": "",
     "scripts": {
         "prepublish": "pnpm run build",
