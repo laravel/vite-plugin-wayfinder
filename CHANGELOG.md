@@ -2,7 +2,11 @@
 
 All notable changes to this project will be documented in this file.
 
-## [Unreleased](https://github.com/laravel/vite-plugin-wayfinder/compare/v0.1.4...main)
+## [Unreleased](https://github.com/laravel/vite-plugin-wayfinder/compare/v0.1.5...main)
+
+## [v0.1.5](https://github.com/laravel/vite-plugin-wayfinder/compare/v0.1.4...v0.1.5) - 2025-09-22
+
+**Full Changelog**: https://github.com/laravel/vite-plugin-wayfinder/compare/v0.1.4...v0.1.5
 
 ## [v0.1.4](https://github.com/laravel/vite-plugin-wayfinder/compare/v0.1.3...v0.1.4) - 2025-09-22
 
