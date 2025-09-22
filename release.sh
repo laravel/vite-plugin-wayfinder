@@ -3,13 +3,14 @@
 REPO="laravel/vite-plugin-wayfinder"
 BRANCH="main"
 
-# Ensure we are on correct branch and the working tree is clean
+# Ensure we are on correct branch
 CURRENT_BRANCH=$(git rev-parse --abbrev-ref HEAD)
 if [ "$CURRENT_BRANCH" != "$BRANCH" ]; then
   echo "Error: must be on $BRANCH branch (current: $CURRENT_BRANCH)" >&2
   exit 1
 fi
 
+# Ensure the working tree is clean
 if [ -n "$(git status --porcelain)" ]; then
   echo "Error: working tree is not clean. Commit or stash changes before releasing." >&2
   git status --porcelain
