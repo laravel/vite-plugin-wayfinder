@@ -3,7 +3,7 @@
     "version": "0.1.3",
     "description": "",
     "scripts": {
-        "prepublish": "npm run build",
+        "prepublish": "pnpm run build",
         "dev": "unbuild --stub",
         "build": "unbuild",
         "format": "prettier --write ."
