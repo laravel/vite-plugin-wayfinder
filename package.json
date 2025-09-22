@@ -1,6 +1,6 @@
 {
     "name": "@laravel/vite-plugin-wayfinder",
-    "version": "0.1.5",
+    "version": "0.1.6",
     "description": "Vite plugin for Laravel Wayfinder",
     "keywords": [],
     "author": "Taylor Otwell",
