@@ -29,6 +29,11 @@
             "types": "./dist/index.d.ts"
         }
     },
+    "pnpm": {
+        "onlyBuiltDependencies": [
+            "esbuild"
+        ]
+    },
     "devDependencies": {
         "@types/node": "^22.15.17",
         "minimatch": "^10.0.1",
