@@ -7,6 +7,8 @@ import { HmrContext, Plugin } from "vite";
 
 const execAsync = promisify(exec);
 
+const debounceMs = 100;
+
 interface WayfinderOptions {
     patterns?: string[];
     actions?: boolean;
@@ -52,7 +54,9 @@ export const wayfinder = ({
         args.push(`--path=${path}`);
     }
 
-    const runCommand = async () => {
+    let serving = false;
+
+    const generate = async () => {
         try {
             await execAsync(`${command} ${args.join(" ")}`);
         } catch (error) {
@@ -62,17 +66,59 @@ export const wayfinder = ({
         context.info(`Types generated for ${generating.join(", ")}`);
     };
 
+    // Two runs writing the same output directory at once can leave torn files,
+    // so every run queues behind the previous one.
+    let tail: Promise<void> = Promise.resolve();
+
+    const runCommand = () => {
+        const result = tail.then(generate, generate);
+
+        tail = result.catch(() => {});
+
+        return result;
+    };
+
+    let timer: ReturnType<typeof setTimeout> | undefined;
+    let pending: Promise<void> | undefined;
+    let settle:
+        | { resolve: () => void; reject: (error: unknown) => void }
+        | undefined;
+
+    const scheduleCommand = () => {
+        pending ??= new Promise<void>((resolve, reject) => {
+            settle = { resolve, reject };
+        });
+
+        clearTimeout(timer);
+
+        timer = setTimeout(() => {
+            const { resolve, reject } = settle!;
+
+            pending = undefined;
+            settle = undefined;
+
+            runCommand().then(resolve, reject);
+        }, debounceMs);
+
+        return pending;
+    };
+
     return {
         name: "@laravel/vite-plugin-wayfinder",
         enforce: "pre",
+        configResolved(config) {
+            serving = config.command === "serve";
+        },
         buildStart() {
             context = this;
             return runCommand();
         },
-        async handleHotUpdate({ file, server }) {
-            if (shouldRun(patterns, { file, server })) {
-                await runCommand();
+        handleHotUpdate({ file, server }) {
+            if (!shouldRun(patterns, { file, server })) {
+                return;
             }
+
+            return serving ? scheduleCommand() : runCommand();
         },
     };
 };
