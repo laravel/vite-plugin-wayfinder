@@ -2,7 +2,15 @@
 
 All notable changes to this project will be documented in this file.
 
-## [Unreleased](https://github.com/laravel/vite-plugin-wayfinder/compare/v0.1.8...main)
+## [Unreleased](https://github.com/laravel/vite-plugin-wayfinder/compare/v0.1.10...main)
+
+## [v0.1.10](https://github.com/laravel/vite-plugin-wayfinder/compare/v0.1.8...v0.1.10) - 2026-09-01
+
+### What's Changed
+
+* Fix pnpm audit findings by [@joetannenbaum](https://github.com/joetannenbaum) in https://github.com/laravel/vite-plugin-wayfinder/pull/26
+
+**Full Changelog**: https://github.com/laravel/vite-plugin-wayfinder/compare/v0.1.8...v0.1.10
 
 ## [v0.1.8](https://github.com/laravel/vite-plugin-wayfinder/compare/v0.1.7...v0.1.8) - 2026-09-01
 
