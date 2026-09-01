@@ -2,7 +2,30 @@
 
 All notable changes to this project will be documented in this file.
 
-## [Unreleased](https://github.com/laravel/vite-plugin-wayfinder/compare/v0.1.7...main)
+## [Unreleased](https://github.com/laravel/vite-plugin-wayfinder/compare/v0.1.8...main)
+
+## [v0.1.8](https://github.com/laravel/vite-plugin-wayfinder/compare/v0.1.7...v0.1.8) - 2026-09-01
+
+### What's Changed
+
+* Pin GitHub Actions to commit SHAs and add Dependabot config by [@joetannenbaum](https://github.com/joetannenbaum) in https://github.com/laravel/vite-plugin-wayfinder/pull/15
+* Bump the github-actions group with 2 updates by [@dependabot](https://github.com/dependabot)[bot] in https://github.com/laravel/vite-plugin-wayfinder/pull/16
+* Add Dependabot cooldown of 5 days by [@nunomaduro](https://github.com/nunomaduro) in https://github.com/laravel/vite-plugin-wayfinder/pull/17
+* Enable Dependabot auto-merge by [@nunomaduro](https://github.com/nunomaduro) in https://github.com/laravel/vite-plugin-wayfinder/pull/18
+* Bump actions/checkout from 6.0.2 to 6.0.3 in the github-actions group by [@dependabot](https://github.com/dependabot)[bot] in https://github.com/laravel/vite-plugin-wayfinder/pull/19
+* Bump the github-actions group with 2 updates by [@dependabot](https://github.com/dependabot)[bot] in https://github.com/laravel/vite-plugin-wayfinder/pull/20
+* Bump stefanzweifel/git-auto-commit-action from 7.1.0 to 7.2.0 in the github-actions group by [@dependabot](https://github.com/dependabot)[bot] in https://github.com/laravel/vite-plugin-wayfinder/pull/21
+* Bump vite from 6.4.2 to 6.4.3 by [@dependabot](https://github.com/dependabot)[bot] in https://github.com/laravel/vite-plugin-wayfinder/pull/22
+* Bump the github-actions group with 2 updates by [@dependabot](https://github.com/dependabot)[bot] in https://github.com/laravel/vite-plugin-wayfinder/pull/23
+* Bump pnpm/action-setup from 6.0.9 to 6.0.10 in the github-actions group by [@dependabot](https://github.com/dependabot)[bot] in https://github.com/laravel/vite-plugin-wayfinder/pull/24
+* Debounce and serialize type generation during dev by [@joetannenbaum](https://github.com/joetannenbaum) in https://github.com/laravel/vite-plugin-wayfinder/pull/25
+
+### New Contributors
+
+* [@dependabot](https://github.com/dependabot)[bot] made their first contribution in https://github.com/laravel/vite-plugin-wayfinder/pull/16
+* [@nunomaduro](https://github.com/nunomaduro) made their first contribution in https://github.com/laravel/vite-plugin-wayfinder/pull/17
+
+**Full Changelog**: https://github.com/laravel/vite-plugin-wayfinder/compare/v0.1.7...v0.1.8
 
 ## [v0.1.7](https://github.com/laravel/vite-plugin-wayfinder/compare/v0.1.5...v0.1.7) - 2025-09-22
 
