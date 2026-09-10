@@ -9,7 +9,7 @@ const execAsync = promisify(exec);
 
 const debounceMs = 100;
 
-interface WayfinderOptions {
+export interface WayfinderOptions {
     patterns?: string[];
     actions?: boolean;
     routes?: boolean;
