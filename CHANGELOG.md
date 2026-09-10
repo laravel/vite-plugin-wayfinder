@@ -8,7 +8,7 @@ All notable changes to this project will be documented in this file.
 
 ### What's Changed
 
-* Fix pnpm audit findings by [@joetannenbaum](https://github.com/joetannenbaum) in https://github.com/laravel/vite-plugin-wayfinder/pull/26
+- Fix pnpm audit findings by [@joetannenbaum](https://github.com/joetannenbaum) in https://github.com/laravel/vite-plugin-wayfinder/pull/26
 
 **Full Changelog**: https://github.com/laravel/vite-plugin-wayfinder/compare/v0.1.8...v0.1.10
 
