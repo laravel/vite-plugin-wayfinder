@@ -1,1 +1,1 @@
-export { wayfinder } from "./vite-plugin-wayfinder";
+export { wayfinder, type WayfinderOptions } from "./vite-plugin-wayfinder";
