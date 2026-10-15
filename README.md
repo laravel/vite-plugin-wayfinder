@@ -26,6 +26,7 @@ export default defineConfig({
             routes: false,
             actions: true,
             formVariants: false,
+            modelDocblocks: false,
             patterns: ["resources/**/myroutes/*.php"],
         }),
         // ...
