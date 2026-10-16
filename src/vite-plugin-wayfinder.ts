@@ -14,6 +14,7 @@ export interface WayfinderOptions {
     actions?: boolean;
     routes?: boolean;
     formVariants?: boolean;
+    skipDatabase?: boolean;
     path?: string;
     command?: string;
 }
@@ -25,6 +26,7 @@ export const wayfinder = ({
     actions = true,
     routes = true,
     formVariants = false,
+    skipDatabase = false,
     path,
     command = "php artisan wayfinder:generate",
 }: WayfinderOptions = {}): Plugin => {
@@ -32,6 +34,10 @@ export const wayfinder = ({
 
     const args: string[] = [];
     const generating: string[] = [];
+
+    if (skipDatabase) {
+        args.push("--skip-database");
+    }
 
     if (!actions) {
         args.push("--skip-actions");

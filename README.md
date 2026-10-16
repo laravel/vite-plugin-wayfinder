@@ -26,6 +26,7 @@ export default defineConfig({
             routes: false,
             actions: true,
             formVariants: false,
+            skipDatabase: false,
             patterns: ["resources/**/myroutes/*.php"],
         }),
         // ...
