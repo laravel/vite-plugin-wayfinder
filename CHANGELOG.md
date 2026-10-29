@@ -8,20 +8,20 @@ All notable changes to this project will be documented in this file.
 
 ### What's Changed
 
-* Fix: Export WayfinderOptions interface by [@MitchelNieuw](https://github.com/MitchelNieuw) in https://github.com/laravel/vite-plugin-wayfinder/pull/27
-* Bump pnpm/action-setup from 6.0.10 to 6.1.0 in the github-actions group by [@dependabot](https://github.com/dependabot)[bot] in https://github.com/laravel/vite-plugin-wayfinder/pull/28
-* Remove security policy in favor of the org-wide default by [@pushpak1300](https://github.com/pushpak1300) in https://github.com/laravel/vite-plugin-wayfinder/pull/29
-* Bump actions/setup-node from 7.0.0 to 7.1.0 in the github-actions group by [@dependabot](https://github.com/dependabot)[bot] in https://github.com/laravel/vite-plugin-wayfinder/pull/30
-* Bump source-map-js from 1.2.1 to 1.2.2 by [@dependabot](https://github.com/dependabot)[bot] in https://github.com/laravel/vite-plugin-wayfinder/pull/32
-* Bump brace-expansion from 5.0.9 to 5.0.12 by [@dependabot](https://github.com/dependabot)[bot] in https://github.com/laravel/vite-plugin-wayfinder/pull/31
-* Bump postcss-selector-parser from 7.1.5 to 7.1.6 by [@dependabot](https://github.com/dependabot)[bot] in https://github.com/laravel/vite-plugin-wayfinder/pull/33
-* Add a flag to type bindings from model docblocks. by [@sweptsquash](https://github.com/sweptsquash) in https://github.com/laravel/vite-plugin-wayfinder/pull/34
+- Fix: Export WayfinderOptions interface by [@MitchelNieuw](https://github.com/MitchelNieuw) in https://github.com/laravel/vite-plugin-wayfinder/pull/27
+- Bump pnpm/action-setup from 6.0.10 to 6.1.0 in the github-actions group by [@dependabot](https://github.com/dependabot)[bot] in https://github.com/laravel/vite-plugin-wayfinder/pull/28
+- Remove security policy in favor of the org-wide default by [@pushpak1300](https://github.com/pushpak1300) in https://github.com/laravel/vite-plugin-wayfinder/pull/29
+- Bump actions/setup-node from 7.0.0 to 7.1.0 in the github-actions group by [@dependabot](https://github.com/dependabot)[bot] in https://github.com/laravel/vite-plugin-wayfinder/pull/30
+- Bump source-map-js from 1.2.1 to 1.2.2 by [@dependabot](https://github.com/dependabot)[bot] in https://github.com/laravel/vite-plugin-wayfinder/pull/32
+- Bump brace-expansion from 5.0.9 to 5.0.12 by [@dependabot](https://github.com/dependabot)[bot] in https://github.com/laravel/vite-plugin-wayfinder/pull/31
+- Bump postcss-selector-parser from 7.1.5 to 7.1.6 by [@dependabot](https://github.com/dependabot)[bot] in https://github.com/laravel/vite-plugin-wayfinder/pull/33
+- Add a flag to type bindings from model docblocks. by [@sweptsquash](https://github.com/sweptsquash) in https://github.com/laravel/vite-plugin-wayfinder/pull/34
 
 ### New Contributors
 
-* [@MitchelNieuw](https://github.com/MitchelNieuw) made their first contribution in https://github.com/laravel/vite-plugin-wayfinder/pull/27
-* [@pushpak1300](https://github.com/pushpak1300) made their first contribution in https://github.com/laravel/vite-plugin-wayfinder/pull/29
-* [@sweptsquash](https://github.com/sweptsquash) made their first contribution in https://github.com/laravel/vite-plugin-wayfinder/pull/34
+- [@MitchelNieuw](https://github.com/MitchelNieuw) made their first contribution in https://github.com/laravel/vite-plugin-wayfinder/pull/27
+- [@pushpak1300](https://github.com/pushpak1300) made their first contribution in https://github.com/laravel/vite-plugin-wayfinder/pull/29
+- [@sweptsquash](https://github.com/sweptsquash) made their first contribution in https://github.com/laravel/vite-plugin-wayfinder/pull/34
 
 **Full Changelog**: https://github.com/laravel/vite-plugin-wayfinder/compare/v0.1.10...v0.1.11
 
