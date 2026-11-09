@@ -30,8 +30,6 @@ export const wayfinder = ({
     path,
     command = "php artisan wayfinder:generate",
 }: WayfinderOptions = {}): Plugin => {
-    patterns = patterns.map((pattern) => pattern.replace("\\", "/"));
-
     const args: string[] = [];
     const generating: string[] = [];
 
@@ -57,7 +55,7 @@ export const wayfinder = ({
     }
 
     if (path) {
-        args.push(`--path=${path}`);
+        args.push(`--path="${path}"`);
     }
 
     let serving = false;
