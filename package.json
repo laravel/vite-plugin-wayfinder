@@ -36,7 +36,7 @@
     },
     "devDependencies": {
         "@types/node": "^22.19.19",
-        "minimatch": "^10.2.5",
+        "minimatch": "^11.0.1",
         "prettier": "^3.8.3",
         "rollup": "^4.60.3",
         "unbuild": "^3.6.1",
